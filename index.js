@@ -5,6 +5,7 @@ const connect = require("./src/configs/db");
 const  {register,login} = require("./src/controllers/auth.user.controller")
 const {AdminRegister,Adminlogin} = require("./src/controllers/auth.admin.controller")
 const userController = require("./src/controllers/user.controller");
+const latestTrekController = require("./src/controllers/latestTrek.controller")
 
 
 const app = express();
@@ -20,6 +21,12 @@ app.post("/adminLogin",Adminlogin)
 
 
 app.use("/users", userController);
+app.use("/latestTrek", latestTrekController);
+
+
+
+
+
 
 app.set("view engine","hbs")
 app.get("/",(req,res)=>{
