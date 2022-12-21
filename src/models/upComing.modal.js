@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 
 
-const latestTrekSchema = new mongoose.Schema(
+const upComingTrekSchema = new mongoose.Schema(
     {
         title: { type: String },
         about: { type: String },
@@ -17,4 +17,4 @@ const latestTrekSchema = new mongoose.Schema(
 );
 
 
-module.exports = mongoose.model("latestTrek", latestTrekSchema); 
+module.exports = mongoose.model("upcomingTrek", upComingTrekSchema); 
