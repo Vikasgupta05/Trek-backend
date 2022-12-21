@@ -8,7 +8,7 @@ const userController = require("./src/controllers/user.controller");
 const latestTrekController = require("./src/controllers/latestTrek.controller")
 const upcomingTrekController = require("./src/controllers/upComing.controller")
 const popularTrekController = require("./src/controllers/popularTrek.controller")
-
+const contactUs = require("./src/controllers/contactUs.controller")
 
 
 
@@ -28,6 +28,10 @@ app.use("/users", userController);
 app.use("/latestTrek", latestTrekController);
 app.use("/upcomingTrek", upcomingTrekController);
 app.use("/popularTrek", popularTrekController);
+app.use("/contactUs", contactUs);
+
+
+
 
 
 
