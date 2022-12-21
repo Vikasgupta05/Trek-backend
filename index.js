@@ -7,6 +7,8 @@ const {AdminRegister,Adminlogin} = require("./src/controllers/auth.admin.control
 const userController = require("./src/controllers/user.controller");
 const latestTrekController = require("./src/controllers/latestTrek.controller")
 const upcomingTrekController = require("./src/controllers/upComing.controller")
+const popularTrekController = require("./src/controllers/popularTrek.controller")
+
 
 
 
@@ -25,8 +27,7 @@ app.post("/adminLogin",Adminlogin)
 app.use("/users", userController);
 app.use("/latestTrek", latestTrekController);
 app.use("/upcomingTrek", upcomingTrekController);
-
-
+app.use("/popularTrek", popularTrekController);
 
 
 
