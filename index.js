@@ -32,6 +32,10 @@ app.use("/contactUs", contactUs);
 
 
 
+app.use("/showImage" , function(req,res) {
+  let filename = req.param("download");
+  return res.download("src/upload/1671271142089-87422027imagesss.png")
+} )
 
 
 

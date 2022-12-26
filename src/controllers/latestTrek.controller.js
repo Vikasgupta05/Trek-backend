@@ -64,8 +64,7 @@ router.patch("/:id", uploadSingle("image") ,async (req, res) => {
       days: req.body.days,
       level: req.body.level,
       fee: req.body.fee,
-      image: req.file.path
-    
+      image: "http://localhost:2345/showImage?download="+(req.file.path).split("/").pop()
     })
     return res.send(latestTrek)
 }
@@ -87,6 +86,9 @@ router.delete("/:id", async (req, res) => {
     return res.status(500).send(err.message);
   }
 });
+
+
+
 
 
 module.exports = router
