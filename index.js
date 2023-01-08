@@ -9,6 +9,7 @@ const latestTrekController = require("./src/controllers/latestTrek.controller")
 const upcomingTrekController = require("./src/controllers/upComing.controller")
 const popularTrekController = require("./src/controllers/popularTrek.controller")
 const contactUs = require("./src/controllers/contactUs.controller")
+const {sendMails} = require("./src/controllers/sendMial.constroller");
 
 
 
@@ -17,6 +18,7 @@ app.use(cors({ origin:"*"}))
 
 
 app.use(express.json());
+app.post("/sendmail", sendMails);
 app.post("/register",register)
 app.post("/login" ,login)
 
@@ -34,9 +36,9 @@ app.use("/contactUs", contactUs);
 
 app.use("/showImage" , function(req,res) {
   let filename = req.param("download");
-  return res.download("src/upload/1671271142089-87422027imagesss.png")
+  return res.download(`src/upload/${filename}`);
 } )
-
+// /showImage?download=filename
 
 
 

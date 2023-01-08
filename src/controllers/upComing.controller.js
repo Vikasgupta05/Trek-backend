@@ -56,6 +56,7 @@ router.post("", uploadSingle("image") ,async(req,res)=>{
 
 
 router.patch("/:id", uploadSingle("image") ,async (req, res) => {
+  // console.log("req.file", req.file)
   try{
     const upcomingTrek = await UpcomingTrek.findByIdAndUpdate(req.params.id ,{
       title: req.body.title,
@@ -64,7 +65,7 @@ router.patch("/:id", uploadSingle("image") ,async (req, res) => {
       days: req.body.days,
       level: req.body.level,
       fee: req.body.fee,
-      image: req.file.path
+      image: `http://localhost:2345/showImage?download=${req.file.filename}` 
     
     })
     return res.send(upcomingTrek)

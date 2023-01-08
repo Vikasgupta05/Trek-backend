@@ -64,7 +64,10 @@ router.patch("/:id", uploadSingle("image") ,async (req, res) => {
       days: req.body.days,
       level: req.body.level,
       fee: req.body.fee,
-      image: "http://localhost:2345/showImage?download="+(req.file.path).split("/").pop()
+      // image: "http://localhost:2345/showImage?download="+(req.file.path).split("/").pop()
+
+      image: `http://localhost:2345/showImage?download=${req.file.filename}` 
+
     })
     return res.send(latestTrek)
 }
