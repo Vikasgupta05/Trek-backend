@@ -3,6 +3,7 @@ const jwt=require("jsonwebtoken")
 const Admin=require("../models/adminLogin.model") 
 
 const newToken = (admin)=>{
+    
     return jwt.sign({admin},"process.env.SECRET_KEY",)}
 
     const AdminRegister=("",async(req,res)=>{
@@ -40,12 +41,12 @@ const newToken = (admin)=>{
             const token=newToken(admin)
 
             return res.json({ status: 'ok', token: token ,admin : admin })
+            }
         }
-    }
-    
-    catch(err){
-        return res.send(err.message)
-    }
-    
-})
+        
+        catch(err){
+            return res.send(err.message)
+        }
+        
+    })  
 module.exports={AdminRegister,Adminlogin}
