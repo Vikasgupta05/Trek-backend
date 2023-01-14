@@ -4,11 +4,11 @@ const mongoose = require("mongoose");
 
 const contactUsSchema = new mongoose.Schema(
     {
-        email: { type: String,},
-        fullName: { type: String,},
-        contact: { type: String,},
-        subject: { type: String,},
-        message: { type: String,},
+        email: { type: String},
+        fullName: { type: String},
+        contact: { type: String},
+        subject: { type: String},
+        message: { type: String},
 
     },{ timestamps: true, }
 );

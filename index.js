@@ -9,7 +9,8 @@ const latestTrekController = require("./src/controllers/latestTrek.controller")
 const upcomingTrekController = require("./src/controllers/upComing.controller")
 const popularTrekController = require("./src/controllers/popularTrek.controller")
 const contactUs = require("./src/controllers/contactUs.controller")
-const {sendMails} = require("./src/controllers/sendMial.constroller");
+const Query = require("./src/controllers/query.controller")
+
 
 
 
@@ -18,7 +19,6 @@ app.use(cors({ origin:"*"}))
 
 
 app.use(express.json());
-app.post("/sendmail", sendMails);
 app.post("/register",register)
 app.post("/login" ,login)
 
@@ -31,6 +31,10 @@ app.use("/latestTrek", latestTrekController);
 app.use("/upcomingTrek", upcomingTrekController);
 app.use("/popularTrek", popularTrekController);
 app.use("/contactUs", contactUs);
+app.use("/query", Query);
+
+
+
 
 
 

@@ -46,7 +46,7 @@ router.post("", uploadSingle("image") ,async(req,res)=>{
         days: req.body.days,
         level: req.body.level,
         fee: req.body.fee,
-        image: req.file.path
+        image: `https://trek-backend.onrender.com/showImage?download=${req.file.filename}` 
       })
       return res.send(latestTrek)
   }catch(err){
