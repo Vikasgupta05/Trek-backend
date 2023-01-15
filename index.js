@@ -6,6 +6,7 @@ const  {register,login} = require("./src/controllers/auth.user.controller")
 const {AdminRegister,Adminlogin} = require("./src/controllers/auth.admin.controller")
 const userController = require("./src/controllers/user.controller");
 const latestTrekController = require("./src/controllers/latestTrek.controller")
+const trekController = require("./src/controllers/trek.controller")
 const upcomingTrekController = require("./src/controllers/upComing.controller")
 const popularTrekController = require("./src/controllers/popularTrek.controller")
 const contactUs = require("./src/controllers/contactUs.controller")
@@ -28,6 +29,7 @@ app.post("/adminLogin",Adminlogin)
 
 app.use("/users", userController);
 app.use("/latestTrek", latestTrekController);
+app.use("/trek", trekController);
 app.use("/upcomingTrek", upcomingTrekController);
 app.use("/popularTrek", popularTrekController);
 app.use("/contactUs", contactUs);
