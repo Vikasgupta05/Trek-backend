@@ -11,6 +11,8 @@ const upcomingTrekController = require("./src/controllers/upComing.controller")
 const popularTrekController = require("./src/controllers/popularTrek.controller")
 const contactUs = require("./src/controllers/contactUs.controller")
 const Query = require("./src/controllers/query.controller")
+const Header = require("./src/controllers/header.controller")
+
 
 
 
@@ -34,6 +36,8 @@ app.use("/upcomingTrek", upcomingTrekController);
 app.use("/popularTrek", popularTrekController);
 app.use("/contactUs", contactUs);
 app.use("/query", Query);
+app.use("/header", Header);
+
 
 
 
