@@ -35,7 +35,7 @@ router.get("/:id", async (req, res) => {
 router.post("",  uploadMultiple('image'),async(req,res)=>{
     try{
       console.log(req.files);
-        const filepaths = req.files.map((file)=>`http://localhost:2345/showImage?download=${file.filename}`)
+        const filepaths = req.files.map((file)=>`${process.env.REACT_APP_API}/showImage?download=${file.filename}`)
         const trek = await Trek.create({
           category: req.body.category,
           title: req.body.title,
@@ -86,7 +86,7 @@ router.post("/trekByCategory", async(req,res)=>{
 
 router.patch("/:id", uploadMultiple("image") ,async (req, res) => {
   try{
-    const filepaths = req.files.map((file)=>`http://localhost:2345/showImage?download=${file.filename}`)
+    const filepaths = req.files.map((file)=>`${process.env.REACT_APP_API}/showImage?download=${file.filename}`)
     let trekToUpdate = {
       category: req.body.category,
       title: req.body.title,
