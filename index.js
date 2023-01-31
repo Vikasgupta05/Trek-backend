@@ -41,9 +41,6 @@ app.use("/header", Header);
 
 
 
-
-
-
 app.use("/showImage" , function(req,res) {
   let filename = req.param("download");
   return res.download(`src/upload/${filename}`);

@@ -5,7 +5,10 @@ const mongoose = require("mongoose");
 const headerSchema = new mongoose.Schema(
     {
         header: { type: String },
-
+        subHeader : [{
+            title: String ,
+        }],
+        
     },{ timestamps: true, }
 );
 

@@ -13,7 +13,7 @@ router.get("",async(req,res)=>{
         return res.send(query  ) 
         
     }catch(err){ 
-        return res.status(500).send(err.message)
+        return res.status(500).send(err.query)
     }
 })
 
@@ -35,9 +35,10 @@ router.post("",async(req,res)=>{
         from: 'vikasnwrdr2001@gmail.com',
         to: req.body.email,
         subject: 'Treking Query',
-        text: req.body.message,
+        text: req.body.query,
       
       };
+
 
       console.log("mailOptions " , mailOptions)
 
@@ -51,7 +52,7 @@ router.post("",async(req,res)=>{
         return res.json({ status: 'ok', data: query  } )
         
     }catch(err){
-        return res.status(500).send(err.message)
+        return res.status(500).send(err.query)
     }
 })
 
@@ -63,10 +64,10 @@ router.delete("/:id", async (req, res) => {
     if (query ) {
       return res.send(query );
     } else {
-      return res.status(404).send({ message: "query  not found" });
+      return res.status(404).send({ query: "query  not found" });
     }
   } catch (err) {
-    return res.status(500).send(err.message);
+    return res.status(500).send(err.query);
   }
 });
 
