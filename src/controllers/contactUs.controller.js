@@ -24,20 +24,20 @@ router.post("",async(req,res)=>{
       var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'vikasnwrdr2001@gmail.com',
-            pass: 'ooctiopilnilaxlw'
+            user: 'kumgarhhikes@gmail.com',
+            pass: 'kxyaynfswruobfuc'
           }
       });
 
       var mailOptions = {
-        from: 'vikasnwrdr2001@gmail.com',
-        to: req.body.email,
+        from: req.body.email,
+        to: "kumgarhhikes@gmail.com",
         subject: 'Treking Contact us',
         text: req.body.message,
       
       };
 
-      console.log("mailOptions " , mailOptions)
+      // console.log("mailOptions " , mailOptions)
 
       transporter.sendMail(mailOptions, function(error, info){
         if (error) {

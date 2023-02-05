@@ -15,8 +15,6 @@ const Header = require("./src/controllers/header.controller")
 
 
 
-
-
 const app = express();
 app.use(cors({ origin:"*"}))
 
