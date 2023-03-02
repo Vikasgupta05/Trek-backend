@@ -23,6 +23,9 @@ const TrekSchema = new mongoose.Schema(
         termsCondition: { type: String },
         accommodation: { type: String },
         notes: { type: String },
+        Altitude:{ type: String },
+        TotalTrekking:{ type: String },
+        Region:{ type: String },
         image: [{type:String}],
 
     },{ timestamps: true, }

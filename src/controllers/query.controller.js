@@ -49,7 +49,7 @@ router.post("",async(req,res)=>{
         console.log('Email sent: ' + info.response);
         }
       });
-        return res.json({ status: 'ok', data: query  } )
+      return res.json({ status: 'ok', data: query  } )
         
     }catch(err){
         return res.status(500).send(err.query)

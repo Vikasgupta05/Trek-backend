@@ -56,11 +56,11 @@ router.post("",  uploadMultiple('image'),async(req,res)=>{
           termsCondition: req.body.termsCondition,
           notes: req.body.notes,
           accommodation: req.body.accommodation,
-          // image: `http://localhost:2345/showImage?download=${req.file.filename}`,
+          Altitude: req.body.Altitude,
+          TotalTrekking: req.body.TotalTrekking,
+          Region: req.body.Region,
           image: filepaths
       })
-
-      // console.log("filepaths ",filepaths);
       return res.send(trek)
   }catch(err){
       return res.status(500).send({message:err.message})
@@ -107,6 +107,9 @@ router.patch("/:id", uploadMultiple("image") ,async (req, res) => {
       termsCondition: req.body.termsCondition,
       notes: req.body.notes,
       accommodation: req.body.accommodation,
+      Altitude: req.body.Altitude,
+      TotalTrekking: req.body.TotalTrekking,
+      Region: req.body.Region,
 
 
     }
